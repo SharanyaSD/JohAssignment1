@@ -1,0 +1,20 @@
+Cherry picking in a nutshell means applying a specific commit/s to a 
+particular desired branch from the current branch. Can be explained with a 
+example - One wants to reflect commits or changes he made from branch 1 to 
+branch 2 in his repo and specific changes only (not all) , Those changes 
+chan be cherry picked by specfying their id.
+x
+Steps - 
+1. Commit everything from in the current branch 
+2. git log 
+3. CHoose the commit you desire to reflect in the other branch. checkout to
+desired branch.
+4. git cherry-pick <particular commit id>
+5. in case of conflicts, the prcoess will work only if coflicts that (if) occur
+are resolved. Commit.
+6. Cherry pick is reflected. 
+
+Use Case - 
+Cherry pick is used in situations when in a huge project their need to be 
+certain changes that make a same effect to various fields. once made changes 
+can be committed and cherry picked to the desired areas. 
