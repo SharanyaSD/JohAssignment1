@@ -1,0 +1,14 @@
+Git remote repository is nothing but a remote/ common repo that multiple 
+people can save/ exchange/ edit changes or updation of code.
+
+A git remote repo can simple be added using - 
+git remote add <remote-id> <remote-url>
+
+Multiple remote repos can be added by specifying - 
+git remote add all <remote-url>
+
+Use case - 
+One of the use can for gir remote repos will include access control. providing access to specific people and restricting while working on a team 
+project 
+
+

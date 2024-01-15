@@ -1,0 +1,9 @@
+Git push --force command basically overwrites the remote branch with the local 
+branch, that means it does not consider any conflicts of commit matches, 
+rather forcefully overwrites. may lead to losses. 
+
+Wherein, git pus --force-with-lease allows changes only if remote and local 
+branches have same commit. Incase if the remote branch is updated by someone, 
+the push will not work, basically be cancelled.
+It is a safer alternative
+

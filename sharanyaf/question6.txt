@@ -1,0 +1,7 @@
+git reset will reset all the changes from staged area. 
+git reset <commit-id>
+
+Or rather, .gitignore file is basically a simple file created to any dorectory of a project. anything affed to this will not be staged or committed.
+touch .gitignore
+then we can add files to it that need to be unstaged. 
+

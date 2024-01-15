@@ -1,0 +1,16 @@
+Reset is used to deleet commits made. 
+
+Specifying reset --soft will undo some changes in git repo but also preserve some changes, decided by developers.
+Whereas, using reset --hard will reset work permanently, back to previous point where everything worked fine.
+
+To delete the most recent commit we use reset hard specifying 1  
+git reset ---hard HEAD~1
+
+To delete multiple commits we use reset hard specifying N 
+git reset --hard HEAD~N
+
+git revert can be used in cases when you want to delete a particular commit in 
+between without making any alters on later commits
+
+Deleted commits can be seen using git reflog.
+

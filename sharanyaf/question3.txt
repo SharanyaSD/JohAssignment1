@@ -1,0 +1,14 @@
+For combining multiple commits to one we use 'Squash'
+In collaborative projects, squash helps in choosing and combing particular
+commits and processing them.
+
+Steps - 
+1. git log - check the commits you want to combine 
+2. Lets consider we want to squash commits C2 and C3 
+3. We rebase on the third commit. 
+	git rebase -i HEAD~4
+4. we use s and specify C3 so that it considers C2 and C3 to combine. 
+
+In case of all the commits to squash, we use HEAD~<no. of recent commits to combine>
+and in case of commits that are selective and not in order, we use pick instead
+of s. 
