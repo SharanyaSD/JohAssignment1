@@ -5,6 +5,7 @@ X can be placed before L (50) and C (100) to make 40 and 90.
 C can be placed before D (500) and M (1000) to make 400 and 900.
 Given a roman numeral, convert it to an integer.
 */
+
 package main
 import "fmt"
 
@@ -18,8 +19,8 @@ func main() {
 		switch input[i] {
 		case 'I':
 			
-			if input[i+1] == 'V' || input[i+1] == 'X' {
-				storeval -= 1
+			if i < len(input) - 1 && (input[i+1] == 'V' || input[i+1] == 'X') {
+				storeval -=1
 			} else {
 				storeval += 1
 			}
@@ -27,7 +28,7 @@ func main() {
 		case 'V':
 			storeval += 5
 		case 'X':
-			if input[i+1] == 'L' || input[i+1] == 'C' {
+			if i < len(input) - 1 && (input[i+1] == 'L' || input[i+1] == 'C') {
 				storeval -= 10
 			} else {
 				storeval += 10
@@ -35,7 +36,7 @@ func main() {
 		case 'L':
 			storeval += 50
 		case 'C':
-			if input[i+1] == 'D' || input[i+1] == 'M' {
+			if i < len(input) - 1 && (input[i+1] == 'D' || input[i+1] == 'M') {
 				storeval -= 100
 			} else {
 				storeval += 100
@@ -53,3 +54,10 @@ func main() {
 	fmt.Println("Number corresponding is: ",storeval)
 }
 
+
+/*
+sharanya@sharanya-ASUS-TUF-Gaming-A15-FA506IHRB-FA506IHRZ:~/JoshAssignment1/GoAsgs1$ go run q1Roman.go
+Enter Roman number: III
+Number corresponding is:  3
+
+*/
