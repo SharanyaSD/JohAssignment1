@@ -1,3 +1,4 @@
+
 //Sharanya Datrange
 /*
 Write a program to store the day(Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday) against the respective index of the day(1, 2, 3, 4, 5, 6, 7) in a map.
@@ -26,11 +27,11 @@ func main() {
 	fmt.Scanln(&index)
 
 	value,isPresent := map1[index]
-	if isPresent {
-		fmt.Println(value)
-	} else {
+	if !isPresent {
 		fmt.Println("Not a day")
-	}
+		return
+	} 
+	fmt.Println(value)
 
 
 }

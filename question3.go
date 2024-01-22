@@ -20,48 +20,47 @@ import (
 	"os"
 )
 
+
 func main() {
-	reader:=bufio.NewReader(os.Stdin)
+	reader := bufio.NewReader(os.Stdin)
 	fmt.Println("Enter a string input: ")
-	inputstr,_:=reader.ReadString('\n')
-	fmt.Println(inputstr)
+	inputStr, _ := reader.ReadString('\n')
+	//splitString := strings.Split(inputstr, " ")
+	
+	//wordFrequency:=map[string] int {}
+	splitString := strings.Fields(inputStr)
+	wordFrequency := make(map[string]int)
 
-	splitString := strings.Split(inputstr, " ")
-	wordFrequency:=map[string] int {}
-
-	var word string
-	for _,word = range splitString {
+	for _, word := range splitString {
 		wordFrequency[word]++
 	}
-	fmt.Println(wordFrequency)
 
-	maxWord,maxFrequency:=findMaxFrequency(wordFrequency)
-	fmt.Print("Word wth max frequency: ", maxWord, " - Highest ocurence", maxFrequency)
-	
+	maxWords, maxFrequency := findMaxFrequency(wordFrequency)
+	fmt.Println("Words with max frequency:", maxWords, "- Highest occurrence:", maxFrequency)
 }
+
+
+
 
 //math.Max?
-func findMaxFrequency(wordFreq map[string]int) (string,int) {
-	var maxWord string
-	var maxFrequency int
 
-	for word,frequency:=range wordFreq {
-		if frequency>maxFrequency {
-			maxFrequency=frequency
-			maxWord=word
+func findMaxFrequency(wordFreq map[string]int) ([]string, int) {
+	var maxFrequency int
+	var multiple []string
+
+	for word, frequency := range wordFreq {
+		if frequency > maxFrequency {
+			maxFrequency = frequency
+			multiple = []string{word}
+		} else if frequency == maxFrequency {
+			multiple = append(multiple, word)
 		}
 	}
-	return maxWord,maxFrequency
+	return multiple, maxFrequency
 }
-
 /*
-Output -
 sharanya@sharanya-ASUS-TUF-Gaming-A15-FA506IHRB-FA506IHRZ:~/Desktop/MyGoPracs$ go run question3.go
 Enter a string input: 
-hi hi hi hello everyone everyone
-hi hi hi hello everyone everyone
-
-map[everyone:1 everyone
-:1 hello:1 hi:3]
-Word wth max frequency: hi - Highest ocurence
+hi hi hello hello
+Words with max frequency: [hello hi] - Highest occurrence: 2
 */
