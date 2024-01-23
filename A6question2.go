@@ -31,7 +31,7 @@ func SliceInput() []int {
 
 func acceptSlice(MySlice []int) (error) {
 	var index int
-	fmt.Println("Emter imndex to search value: ")
+	fmt.Println("Enter index to search value: ")
 	fmt.Scanln(&index)
 	
 	if index < 0 || index >= len(MySlice) {
@@ -53,7 +53,7 @@ element 1 : 2
 element 2 : 3
 element 3 : 4
 element 4 : 5
-Emter imndex to search value: 
+Enter index to search value: 
 9
 index out of range
 
