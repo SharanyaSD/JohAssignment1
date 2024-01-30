@@ -18,14 +18,16 @@ func main() {
 	var wg sync.WaitGroup
 	wg.Add(1)
 	go func() {
+		defer wg.Done()
 		mutex.Lock()
 		n++
 		mutex.Unlock()
-		defer wg.Done()
+		
 	}()
 
 	wg.Add(1)
 	go func() {
+		defer wg.Done()
 		mutex.Lock()
 		if isEven(n) {
 			fmt.Println(n, " is even")
@@ -33,9 +35,11 @@ func main() {
 			fmt.Println(n, " is odd")
 		}
 		mutex.Unlock()
-		defer wg.Done()
+		
 	}()
 	wg.Wait()
 
 	fmt.Println("Main completed")
 }
+
+
